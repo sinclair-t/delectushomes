@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Server Connection Info</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .card {
+            background: white;
+            color: #333;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 { color: #667eea; margin-top: 0; }
+        .success { color: #10b981; font-weight: bold; font-size: 24px; }
+        .url-box {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: #5568d3; }
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            color: #92400e;
+            border-radius: 4px;
+        }
+        .info-item { margin: 15px 0; line-height: 1.6; }
+    </style>
+    <script>
+        window.onload = function() {
+            document.getElementById('currentUrl').textContent = window.location.href;
+            const baseUrl = window.location.origin;
+            document.getElementById('siteUrl').textContent = baseUrl + '/index.html';
+            document.getElementById('siteLink').href = baseUrl + '/index.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="card">
+        <h1>✅ Server is Running!</h1>
+        <p class="success">Connection Successful</p>
+        
+        <div class="info-item">
+            <strong>You are currently at:</strong>
+            <div class="url-box" id="currentUrl">Loading...</div>
+        </div>
+        
+        <div class="info-item">
+            <strong>Your website is available at:</strong>
+            <div class="url-box" id="siteUrl">Loading...</div>
+        </div>
+        
+        <a href="/index.html" class="btn" id="siteLink">🚀 Go to Your Website</a>
+        
+        <div class="warning">
+            <strong>⚠️ Important for Cloud IDEs:</strong><br>
+            If you're using GitHub Codespaces, Replit, Gitpod, or similar cloud platforms:
+            <ul style="margin: 10px 0;">
+                <li>Look for a "PORTS" tab or panel in your IDE</li>
+                <li>Find port 8080 and click "Open in Browser" or the globe icon</li>
+                <li>Use the forwarded URL, not "localhost"</li>
+            </ul>
+        </div>
+        
+        <div class="info-item">
+            <strong>Troubleshooting:</strong>
+            <ul>
+                <li>If using a cloud IDE, check the Ports/Preview panel</li>
+                <li>Try closing all browser tabs and opening a fresh window</li>
+                <li>Make sure you're using the correct URL from your environment</li>
+                <li>Check if your IDE shows a "port forwarding" notification</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
